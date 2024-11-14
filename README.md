@@ -11,6 +11,14 @@ The project is organized as follows:
 - The `+utils` folder contains a function that print a progress bar, as the process can be long.
 - The `Demo` folder contains the result data of 2 simulations and a script for extract and plot the boundary layer.
 
+## Simulation data
+
+The data contained in the `Demo/data` folder is of 2 simulations:
+- *Case1* is the result of a steady simulation, with a x-velocity of 200 m.s^(-1).
+- *Case2* is the result of a transient simulation, with a x-velocity of 200 m.s^(-1).
+
+Both simulations use the same geometry and same mesh in Fluent.
+
 ## MeshReader
 
 The class developped are the following:

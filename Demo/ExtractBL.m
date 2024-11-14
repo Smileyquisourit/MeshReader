@@ -136,12 +136,6 @@ end
 import MeshReader.*
 import utils.progressBar
 
-% For case 1, use:
-%    - V_inf = 200
-% For case 2, use:
-%    - V_inf = 0.002
-
-
 % Initialisation:
 % ---------------
 V_inf = 200; % m.s^(-1)
@@ -156,7 +150,7 @@ mesh = Mesh("Demo/data/Case1");
 ax_C = axes(figure());
 hold(ax_C,'on'),grid(ax_C,'on')
 plot(ax_C,[BL_upper.nodes.x_coord],[BL_upper.nodes.y_coord],"Color","#0072BD")
-plot(ax_C,[BL_lower.nodes.x_coord],[BL_lower.nodes.y_coord],"Color","#0072BD")
+plot(ax_C,[BL_lower.nodes.x_coord],[BL_lower.nodes.y_coord],"Color","#77AC30")
 plot(ax_C,[CYL_upper.nodes.x_coord],[CYL_upper.nodes.y_coord],"Color","#A2142F")
 plot(ax_C,[CYL_lower.nodes.x_coord],[CYL_lower.nodes.y_coord],"Color","#A2142F")
 xlim(ax_C, [mesh.min("x-coordinate"),mesh.max("x-coordinate")]); xlabel(ax_C, "x (m)")
@@ -168,7 +162,7 @@ title(ax_C,"Boundary Layer in cartesian coordinate")
 ax_P = axes(figure());
 hold(ax_P,'on'),grid(ax_P,'on')
 plot(ax_P,180-rad2deg([BL_upper.nodes.t_coord]),[BL_upper.nodes.r_coord]-2,"Color","#0072BD")
-plot(ax_P,180-rad2deg(abs([BL_lower.nodes.t_coord])),[BL_lower.nodes.r_coord]-2,"Color","#0072BD")
+plot(ax_P,180-rad2deg(abs([BL_lower.nodes.t_coord])),[BL_lower.nodes.r_coord]-2,"Color","#77AC30")
 plot(ax_P,180-rad2deg([CYL_upper.nodes.t_coord]),[CYL_upper.nodes.r_coord]-2,"Color","#A2142F")
 plot(ax_P,180-rad2deg(abs([CYL_lower.nodes.t_coord])),[CYL_lower.nodes.r_coord]-2,"Color","#A2142F")
 xlabel(ax_P,"\theta (°)","Interpreter","tex"); ylabel(ax_P,"Distance to cylinder wall (m)")
