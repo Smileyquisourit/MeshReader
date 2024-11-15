@@ -61,9 +61,9 @@ classdef MeshFace
             %   Construct an instance of the MeshClass with 3 nodes.
 
             arguments (Input)
-                node_1 (1,1) MeshReader.MeshNode
-                node_2 (1,1) MeshReader.MeshNode
-                node_3 (1,1) MeshReader.MeshNode
+                node_1 (1,1) MeshReader.MeshNode = MeshReader.MeshNode()
+                node_2 (1,1) MeshReader.MeshNode = MeshReader.MeshNode()
+                node_3 (1,1) MeshReader.MeshNode = MeshReader.MeshNode()
 
                 verbose (1,1) logical = false
             end

@@ -44,7 +44,7 @@ classdef MeshLine < handle
             end
             
             if n_point > 0
-                obj.nodes = repmat(MeshNode, n_point, 1);
+                obj.nodes = repmat(MeshReader.MeshNode, n_point, 1);
             end
         end
         
