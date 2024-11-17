@@ -60,6 +60,7 @@ The MeshLine class represents a line of the mesh. A line is an un-ordered collec
 - *descend* sort the nodes by the ascending order from the variable specified
 - *nearestNeighbourt* try to sort the nodes by starting from the node with the lowest x coordinate, and find the following node with the lowest euclidian distance.
 - *none* doesn't sort the nodes, so their are in the order in wich they were found
+
 For creating a MeshLine, use the following syntax:
 ```matlab
 line = MeshReader.MeshLine();  % create an empty line
