@@ -20,6 +20,8 @@ classdef MeshNode < handle
         t_coord (1,1) double
         u_r     (1,1) double
         u_t     (1,1) double
+
+        cart_coord (2,1) double
     end
 
     methods % GET
@@ -34,6 +36,10 @@ classdef MeshNode < handle
         end
         function property = get.u_t(self)
             property = -self.u_x*sin(self.t_coord) + self.u_y*cos(self.t_coord);
+        end
+    
+        function property = get.cart_coord(self)
+            property = [self.x_coord; self.y_coord];
         end
     end
 

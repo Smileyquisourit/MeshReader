@@ -9,7 +9,7 @@ The goal of this project was to extract and plot the necessary data to analyse t
 The project is organized as follows:
 - The `+MeshReader` folder contains the source code of the differents class developped to represent the mesh.
 - The `+utils` folder contains a function that print a progress bar, as the process can be long.
-- The `Demo` folder contains the result data of 2 simulations and a script for extract and plot the boundary layer.
+- The `Demo` folder contains the result data of 2 simulations and 2 script that extract and plot the boundary layer and the velocity profil around the cylinder wall.
 
 ## Simulation data
 
@@ -55,8 +55,18 @@ Like for MeshNode, it isn't recommended to create directly a MeshFace, but to us
 
 ### MeshLine
 
-The MeshLine class represents a line of the mesh. A line is an ordered collection of nodes, which are a set of points that can be ordered. For creating a MeshLine, use the following syntax:
+The MeshLine class represents a line of the mesh. A line is an un-ordered collection of nodes, which are a set of points of then mesh with computable properties (like velocity or polar coordinate). The nodes are saved in a un-ordoned list, but the user can sort them using different methods:
+- *ascend* sort the nodes by the ascending order from the variable specified
+- *descend* sort the nodes by the ascending order from the variable specified
+- *nearestNeighbourt* try to sort the nodes by starting from the node with the lowest x coordinate, and find the following node with the lowest euclidian distance.
+- *none* doesn't sort the nodes, so their are in the order in wich they were found
+For creating a MeshLine, use the following syntax:
 ```matlab
 line = MeshReader.MeshLine();  % create an empty line
 line = MeshReader.MeshLine(n); % create a line with n un-initialyse node.
 ```
+For obtaining the sorted nodes, use the following syntaxe:
+```matlab
+sorted_data = line.sort(["var1","var2"],"from","var1","order","ascend")
+```
+The first argument is the wanted variables, the *from* argument is the variable on wich to base the sorting (by default the first of the wanted variable), and the *order* argument is the order in wich you want to sort the nodes.
